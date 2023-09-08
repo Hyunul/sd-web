@@ -13,7 +13,6 @@ export function add_Tag() {
 
     new_arr.innerHTML = arr1;
 
-    // 배열 나타내기
     if (arrArea.childElementCount > 0) {
         arrArea.removeChild(arrArea.childNodes[0]);
         arrArea.appendChild(new_arr);
@@ -21,7 +20,10 @@ export function add_Tag() {
         arrArea.appendChild(new_arr);
     }
 
-    // 태그 나타내기
     tagArea.appendChild(new_pTag);
     console.log(arr1);
+}
+
+export function sendTxt() {
+    console.log("Hello")
 }
