@@ -69,6 +69,7 @@
     background-color: sandybrown;
     border: 1px solid rgb(253, 180, 115);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .arr_div {
