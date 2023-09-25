@@ -1,45 +1,40 @@
-import '../App.css';
+import './main.css';
 import React from 'react';
-import * as front from './front';
-import axios from 'axios'
-import {useNavigate} from 'react-router-dom';
+import * as front from '../front';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
     const navigate = useNavigate();
-    
-    const getData = async () => {
 
+    const getData = async () => {
         let value = document.getElementsByClassName('arr_div')[0].textContent;
-        let arr = value.split(",")
+        let arr = value.split(',');
         let img = [];
 
         for (let i = 0; i < arr.length; i++) {
+            let response = await axios
+                .post('http://221.159.102.58:8000/api/txt/', {
+                    txt: arr[i],
+                })
+                .then(function (response) {
+                    console.log(response);
 
-            let response = await axios.post('http://221.159.102.58:8000/api/txt/', {
-            txt: arr[i]
-
-        })
-        .then(function (response) {
-            console.log(response)
-
-            img.push(response.data);
-
-        }).catch(function (error) {
-            
-        }).then(function() {
-
-        })
+                    img.push(response.data);
+                })
+                .catch(function (error) {})
+                .then(function () {});
         }
 
         return img;
-    }
+    };
 
     async function sendTxt() {
         let img = await getData();
 
-        const toComponentB= async ()=>{
-            navigate('/gen_2d',{state:{img: img}});
-        }
+        const toComponentB = async () => {
+            navigate('/gen_2d', { state: { img: img } });
+        };
 
         await toComponentB();
     }
@@ -58,7 +53,9 @@ const Main = () => {
                     </button>
                 </div>
                 <div className="App-container2">
-                    <button className="generate-button" onClick={sendTxt}>GENERATE</button>
+                    <button className="generate-button" onClick={sendTxt}>
+                        GENERATE
+                    </button>
                 </div>
             </div>
         </div>

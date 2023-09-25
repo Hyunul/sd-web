@@ -1,10 +1,9 @@
-import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './Component/main';
-import GEN_2D from './Component/gen_2d';
-import GEN_3D from './Component/gen_3d';
-import Edit from './Component/edit_page';
+import Main from './Component/main/main';
+import GEN_2D from './Component/gen_2d/gen_2d';
+import GEN_3D from './Component/gen_3d/gen_3d';
+import Edit from './Component/edit_page/edit_page';
 
 function App() {
     return (
