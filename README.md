@@ -1,8 +1,9 @@
 # Gen LAB
+This code is related to the front end of Labis' project GenLAB.
 
----
+It doesn't include a backend, so it doesn't really work.
 
-## Getting Start
+Replace operation with the Demo image below.
 
-`npm i --save`
-`npm run start`
+## Demo
+<img src="public\assets\mp4\demo.gif">
